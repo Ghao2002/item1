@@ -1,0 +1,224 @@
+.top-bg {
+    background:url("../img/top.png") no-repeat 0px 0px;
+    background-size: cover;
+    margin-bottom: 8em;
+}
+.subject {
+    .top {
+        text-align: center;
+        margin-bottom: 3%;
+        .title {
+            font-size: 2.2em;
+            color: #2b9fe8;
+        }
+        .subtitle{
+            font-size: 1.6em;
+            color: #333;
+        }
+    }
+    .middle {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        .item {
+            cursor: pointer;
+            width: 49%;
+            padding: 3%;
+            transition: all 0.3s linear;
+            margin-bottom: 10%;
+            .imgs {
+                margin-bottom: 6%;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    max-width: 200%;
+                    transition: all 0.3s linear;
+                }
+            }
+            .title {
+                font-size: 1.2em;
+                margin-bottom: 1%;
+            }
+            .dates {
+                font-size: 1.2em;
+                color: #999;
+                margin-bottom: 4%;
+            }
+            .info {
+                width: 99%;
+                margin: 0 auto;
+                line-height: 1.5;
+                text-indent: 1em;
+                font-size: 1em;
+                color: #666;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                margin-bottom: 7%;
+            }
+            .arrow {
+                overflow: hidden;
+                display: flex;
+                justify-content: flex-end;
+                .cover {
+                    width: 30px;
+                    height: 14px;
+                    overflow: hidden;
+                    ul {
+                        margin-left: -30px;
+                        width: 200%;
+                        height: 100%;
+                        overflow: hidden;
+                        .ico {   
+                            float: right;
+                            width: 50%;
+                            height: 100%;
+                            cursor: pointer;
+                            background: url('../img/ico.png') no-repeat;
+                            background-size: 568px 411px;
+                            background-position: -20px -332px;
+                            overflow: hidden;
+                            z-index: 3;
+                            transition: all 0.3s linear;
+                        }
+                        .ico:nth-child(1) {
+                            opacity: 1;
+                        }
+                        .ico:nth-child(2) {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+            &:hover {
+                box-shadow: 0 0 22px rgba(0, 0, 0, 0.12);
+                .imgs {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+                .title {
+                    color: #2ba0e8;
+                }
+                .arrow {
+                    .ico {
+                        transform: translateX(30px);
+                    }
+                    .ico:nth-child(1) {
+                        opacity: 0!important;
+                    }
+                    .ico:nth-child(2) {
+                        opacity: 1!important;
+                    }
+                }
+            }
+        }
+    }
+    .bottom {
+        margin-bottom: 5%;
+        .item {
+            cursor: pointer;
+            width: 70%;
+            margin: 0 auto;
+            padding: 1.4%;
+            border-bottom: 1px solid #ececec;
+            transition: all 0.3s linear;
+            .title{
+                font-size: 1.2em;
+                margin-bottom: 1.2%;
+                transition: all 0.3s linear;
+                .dates {
+                    float: right;
+                    color: #999;
+                }
+            }
+            .txt {
+                font-size: 1em;
+                color: #666;
+                width: 97%;
+                white-space: nowrap;
+                overflow-x: hidden;
+                text-overflow: ellipsis;
+            }
+            &:hover {
+                box-shadow: 0 0 22px rgba(0, 0, 0, 0.12);
+                .title {
+                    color: #2b9fe8;
+                }
+            }
+        }
+    }
+}
+
+// 兼容
+@media screen and (max-width: 840px) {
+    .top-bg {
+        margin-bottom: 12%;
+    }
+    .subject {
+        .middle {
+            flex-wrap: wrap;
+            margin-bottom: 5%;
+            .item {
+                width: 100%;
+                padding: 5%;
+                margin:0 auto;
+                margin-bottom: 3%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 730px) {
+    .subject {
+        .bottom {
+            .item {
+                .title {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    margin-bottom: 2px;
+                    .dates {
+                        float: none;
+                        display: block;
+                    }
+                }
+                .txt {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 425px) {
+    .subject {
+        .middle {
+            width: 80%;
+            .item {
+                padding: 7%;
+                .title {
+                    font-size: 1em;
+                }
+                .dates {
+                    font-size: 1em;
+                }
+                .txt {
+                    font-size: 0.7em;
+                }
+            }
+        }
+        .bottom {
+            .item {
+                width: 80%;
+                .title {
+                    font-size: 1em;
+                }
+                .txt {
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
+}

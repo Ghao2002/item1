@@ -1,0 +1,235 @@
+.top-bg {
+    background:url("../img/top.png") no-repeat 0px 0px;
+    background-size: cover;
+    margin-bottom: 8em;
+}
+.reveal {
+    .top {
+        text-align: center;
+        margin-bottom: 2em;
+        .title {
+            font-size: 2.2em;
+            color: #2b9fe8;
+        }
+        .subtitle{
+            font-size: 1.6em;
+            color: #333;
+        }
+    }
+    .exhibition{
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 10%;
+        .item {
+            cursor: pointer;
+            text-align: center;
+            width: 32%;
+            padding: 2em;
+            transition: all 0.3s linear;
+            .imgs {
+                margin-bottom: 1em;
+                overflow: hidden;
+                img {
+                    transition: all 0.3s linear;
+                }
+            }
+            .info {
+                font-size: 1.2em;
+            }
+            &:hover {
+                box-shadow: 0 0 15px rgba(0,0,0,10%);
+                .imgs {
+                    overflow: hidden;
+                    img {
+                        transform: scale(1.2);
+                    }
+                }
+                .info {
+                    color: #2ba0e8;
+                }
+            }
+        }
+    }
+}
+.introduction {
+    padding: 0;
+    .bannerbox {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        .introduce {
+            width: 33%;
+            padding: 5%;
+            padding-right: 0;
+            background: url('../img/bg.png') no-repeat;
+            background-size: cover;
+            .title {
+                font-size: 3em;
+                font-weight: 700;
+                color: #fff;
+                margin-bottom: .7em;
+                word-break: break-all;
+            }
+            .subtitle {
+                font-size: 1.8em;
+                color: #e7e555;
+                margin-bottom: .7em;
+            }
+            .info {
+                width: 90%;
+                font-size: 1em;
+                color: #fff;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                margin-bottom: 7%;
+            }
+        }
+        .banner-chart {
+            width: 67%;
+        }
+    }
+
+}
+.chara {
+    margin: 10% 0;
+    .top {
+        text-align: center;
+        margin-bottom: 5%;
+        .title {
+            font-size: 2.2em;
+            color: #2b9fe8;
+        }
+        .subtitle{
+            font-size: 1.6em;
+            color: #333;
+        }
+    }
+    .listbox {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        .item {
+            text-align: center;
+            width: 22%;
+            .ico {
+                width: 60%;
+                margin: 0 auto;
+                margin-bottom: 5%;
+            }
+        }
+    }
+}
+
+// 兼容
+@media screen and (max-width: 1700px) {
+    .introduction {
+        .bannerbox {
+            .introduce {
+                display: flex;
+                align-content: space-evenly;
+                flex-wrap: wrap;
+                padding:0;
+                padding: 0 1em;
+                .sub-w {
+                    margin: 0;
+                    width: 100%;
+                }
+                .title {
+                    font-size: 2em;
+                }
+                .subtitle {
+                    font-size: 1.6em;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 750px) {
+    .introduction {
+        .bannerbox {
+            .introduce {
+                .title {
+                    font-size: 1.4em;
+                }
+                .subtitle {
+                    font-size: 1.4em;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    .top-bg {
+        margin-bottom: 20%;
+    }
+    .reveal {
+        .top {
+            .title {
+                font-size: 1.5em;
+            }
+            .subtitle {
+                font-size: 1.2em;
+            }
+        }
+        .exhibition {
+            flex-wrap: wrap;
+            .item {
+                width: 70%;
+                padding: 7%;
+                margin: 0 auto;
+                .info {
+                    font-size: .7em;
+                }
+            }
+        }
+    }
+    .introduction {
+        .bannerbox {
+            flex-direction: column-reverse;
+            .banner-chart {
+                width: 100%;
+            }
+            .introduce {
+                width: 100%;
+                padding: 5%;
+                padding-right: 0;
+                .title {
+                    font-size: 1.7em;
+                }
+                .subtitle {
+                    font-size: 1.2em;
+                }
+                .info {
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
+    .chara {
+        .top {
+            .title {
+                font-size: 1.5em;
+            }
+            .subtitle {
+                font-size: 1.2em;
+            }
+        }
+        .listbox {
+            flex-wrap: wrap;
+            .item {
+                width: 60%;
+                margin: 0 auto;
+                margin-bottom: 10%;
+                .txt {
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
+}

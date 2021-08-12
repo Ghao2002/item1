@@ -1,0 +1,196 @@
+.hiden {
+    opacity: 0;
+    z-index: -1;
+    user-select: none;
+}
+header {
+    .navs {
+        border: none;
+        border-radius: 0px;
+        background-color: #fff;
+        margin-bottom: 1px;
+        .navlist {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .logo {
+                font-size: 2em;
+                color: #2B9FE8;
+                &:hover {
+                    color: #2B9FE8;
+                }
+                &:focus {
+                    color: #2B9FE8;
+                }
+            }
+            .collapse {
+                .nav {
+                    li {
+                        a {
+                            padding: 20px;
+                            font: 1em "微软雅黑";
+                            color: #333;
+                            border-bottom: 3px solid transparent;
+                            transition: all 0.3s linear;
+                            &:hover {
+                                color: #333;
+                                border-bottom: 3px solid #2ba0e8;
+                            }
+                        }
+                        .colors {
+                            color: #2ba0e8;
+                            border-bottom: 3px solid #2ba0e8;
+                            &:hover {
+                                color: #2ba0e8;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .nav-width {
+            width: 55%;
+            &::before, &::after {
+                display: none;
+            }
+        }
+    }
+}
+footer {
+    .footer {
+        padding: 1em 0;
+        background-color: #333;
+        text-align: center;
+        .title {
+            color: #666;
+            font-size: .8em;
+            margin-bottom: 2px;
+        }
+        .txt {
+            color: #666;
+            font-size: .8em;
+        }
+    }
+}
+#gotop {
+    position: fixed;
+    bottom: 90px;
+    right: 0%;
+    width: 80px;
+    cursor: pointer;
+    z-index: -99998;
+    opacity: 0;
+
+    transition: all linear .4s;
+
+    &:hover {
+        animation: rubberBand 1s;
+    }
+
+    @keyframes rubberBand {
+        from {
+          transform: scale3d(1, 1, 1);
+        }
+      
+        30% {
+          transform: scale3d(1.25, 0.75, 1);
+        }
+      
+        40% {
+          transform: scale3d(0.75, 1.25, 1);
+        }
+      
+        50% {
+          transform: scale3d(1.15, 0.85, 1);
+        }
+      
+        65% {
+          transform: scale3d(.95, 1.05, 1);
+        }
+      
+        75% {
+          transform: scale3d(1.05, .95, 1);
+        }
+      
+        to {
+          transform: scale3d(1, 1, 1);
+        }
+      }
+}
+
+@media screen and (max-width: 1165px) {
+    header {
+        .navs {
+            .nav-width {
+                width: 70%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1000px) {
+    header {
+        .navs {
+            .nav-width {
+                width: 75%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 860px) {
+    header {
+        .navs {
+            .nav-width {
+                width: 85%;
+            }
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    header {
+        .navs {
+            .nav-width {
+                width: 80%;
+                display: block;
+                .head-nav {
+                    width: 100%;
+                    margin: 0;
+                    .navbar-toggle {
+                        border-color: #cdcdcd;
+                        margin-right: 0;
+                        .icon-bar {
+                            background-color: #cdcdcd;
+                        }
+                    }
+                    .logo {
+                        padding-left: 0;
+                    }
+                }
+                .navbar-collapse {
+                    .nav-menu {
+                        text-align: center;
+                        li {
+                            a {
+                                padding: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    header {
+        .navs {
+            .nav-width {
+                width: 100%;
+                display: block;
+                .head-nav {
+                    .logo {
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+    }
+}

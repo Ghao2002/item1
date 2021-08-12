@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/animate.min.css">
+    <link rel="stylesheet/less" href="./assets/css/reset.less">
+    <link rel="stylesheet/less" href="./assets/css/common.less">
+    <link rel="stylesheet/less" href="./assets/css/index.less">
+    <script type="text/javascript"
+        src="http://api.map.baidu.com/api?v=2.0&ak=yADQookyOCDIO3vLOUc1RYO6lp7hHLX1"></script>
+</head>
+
+<body>
+    <header class="header wow fadeInUp" id="header">
+        <nav class="navbar navbar-inverse navs">
+            <div class="container navlist nav-width">
+                <!-- logo -->
+                <div class="navbar-header head-nav">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="logo navbar-brand wow fadeInLeft" href="javascript:void(0)">化工涂料</a>
+                </div>
+
+                <!-- 导航元素 -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right nav-menu" id="nav-menu">
+                        <li>
+                            <a href="../home/index.html" class="wow fadeInRight" data-wow-delay="100ms">首页</a>
+                        </li>
+                        <li>
+                            <a href="../paging1/index.html" class="wow fadeInRight" data-wow-delay="200ms">关于我们</a>
+                        </li>
+                        <li>
+                            <a href="../paging2/index.html" class="wow fadeInRight" data-wow-delay="300ms">产品中心</a>
+                        </li>
+                        <li>
+                            <a href="../paging3/index.html" class="wow fadeInRight" data-wow-delay="400ms">涂料知识</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" class="colors wow fadeInRight" data-wow-delay="500ms">联系我们</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="top-bg container-fluid wow fadeInUp" data-wow-delay=".3s">
+        <img class="hiden" src="./assets/img/top.png" alt="hiden">
+    </div>
+    <div class="subject wow fadeInUp" data-wow-delay=".5s">
+        <div class="content">
+            <div class="top">
+                <div class="title">CONTACT US</div>
+                <div class="subtitle">联系我们</div>
+            </div>
+            <div class="middle">
+                <div class="itembox">
+                    <div class="item">
+                        <div class="txt">联系邮箱：16800@Fanke.com</div>
+                        <div class="txt">联系电话：13800000000</div>
+                        <div class="txt">联系地址：广东省广州市海珠区鹭江路12号</div>
+                        <div class="words">如有任何问题请联系我们，我们7*24小时竭诚为您服务</div>
+                        <button class="btn">联系我们 &gt;</button>
+                    </div>
+                    <div class="item">
+                        <div class="factory">
+                            <img src="./assets/img/factory.png" alt="工厂">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="map">
+                    <div id="allmap"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="wow fadeInUp" data-wow-delay=".1s">
+        <div class="footer container-fluid">
+            <div class="title">
+                ©2021 广州凡科-化工涂料 版权所有
+            </div>
+            <div class="txt">
+                本站使用 凡科网络技术管控|管理登录
+            </div>
+        </div>
+    </footer>
+</body>
+<!-- 解析less的文件 -->
+<script src="./assets/js/less.min.js"></script>
+
+<!-- jquery  -->
+<script src="./assets/js/jquery.min.js"></script>
+
+<!-- bootstrap -->
+<script src="./assets/js/bootstrap.min.js"></script>
+
+<script src="./assets/js/"></script>
+
+<!-- wow.js -->
+<script src="./assets/js/wow.min.repeat.js"></script>
+
+<script>
+    //实例化wow.js
+    new WOW().init()
+
+    $("#nav-menu").find('a').click(function(){
+        var len = $("#nav-menu").find('a').length
+        var lis = $("#nav-menu").find('a')
+        lis.removeClass("colors")
+        $(this).addClass("colors")
+    })
+    // 百度地图API功能
+
+    var map = new BMap.Map("allmap");
+    // map.centerAndZoom(new BMap.Point(113.321232, 23.102672), 20);
+
+    // 添加带有定位的导航控件
+
+    var navigationControl = new BMap.NavigationControl({
+        // 靠左上角位置
+
+        anchor: BMAP_ANCHOR_TOP_LEFT,
+
+        // LARGE类型
+
+        type: BMAP_NAVIGATION_CONTROL_LARGE,
+
+    });
+
+    map.addControl(navigationControl);
+
+    // 创建地图实例
+    var point = new BMap.Point(113.321232, 23.102672);
+    // 创建点坐标
+    map.centerAndZoom(point, 20);
+    // 初始化地图， 设置中心点坐标和地图级别
+    var marker = new BMap.Marker(point);
+    map.addOverlay(marker);
+</script>
+
+</html>
